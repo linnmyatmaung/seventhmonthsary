@@ -1,92 +1,99 @@
-# Happy Birthday Card
+# 🎂 Happy Birthday Card Template 🎈
 
-A Customizable Web-based birthday card to wish your friends and family in a unique way.
-
-Check out the Previews -
-
-- [Without Scroll Message](https://happy-birthday-card.vercel.app/)
-- [With Scroll Message](https://hbd-card.netlify.app/)
-
-If you liked it, please consider giving it star a 🤩⭐. You can also support me by sponsoring.
+A beautiful, interactive, and highly customizable web-based birthday card. Perfect for sending a digital surprise to your loved ones!
 
 ---
 
-## How to setup
+## ✨ Features
 
-Here are the methods to set it up for yourself.
+- 📱 **Fully Responsive**: Looks great on mobile, tablet, and desktop.
+- 🎨 **Customizable**: Personalize names, messages, and photos via environment variables.
+- ⏳ **Countdown/Date Lock**: Set a specific date for the card to be "openable".
+- 📜 **Scroll Message**: Include a long, heartfelt message that scrolls beautifully.
+- 🚀 **Vercel Ready**: Deploy to the web in seconds.
 
-### Remote Deployment
+---
 
-- Vercel Deploy
+## 🚀 Getting Started
 
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAnshumanMahato%2FHappy-Birthday-Card&env=NAME,PIC&envDescription=NAME%20-%3E%20Name%20of%20the%20Receiver%20%7C%20PIC%20-%3E%20web%20url%20of%20a%20picture%20of%20the%20receiver&envLink=https%3A%2F%2Fgithub.com%2FAnshumanMahato%2FHappy-Birthday-Card%2Fblob%2Fmain%2Fdocs%2Fvariables.md&project-name=happy-birthday-card&repo-name=happy-birthday-card&demo-title=Happy%20Birthday%20Card&demo-description=This%20is%20a%20web%20based%20interactive%20birthday%20card.&demo-url=https%3A%2F%2Fhappy-birthday-card.vercel.app%2F&demo-image=https%3A%2F%2Ftelegra.ph%2Ffile%2Fac886529ccc3843552f81.png)
-
-- Netlify Deploy
-
-   [![Deploy with NEtlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/AnshumanMahato/Happy-Birthday-Card)
-
-Remote deployment will require you to specify some mandatory environmental variables,
-
-- NAME: Name of the receiver.
-- PIC: Url of the pic to be loaded in the card. If don't have the image hosted somewhere, you may publish a [telegra.ph article](https://telegra.ph) with your image and copy the image address from there.
-
-To know more about the environment variables, check [References](#references).
-
-### For Local Building
-
-1. Clone the repository
-
-```sh
-git clone https://github.com/AnshumanMahato/Happy-Birthday-Card
-
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/AnshumanMahato/Happy-Birthday-Card.git
+cd Happy-Birthday-Card
 ```
 
-2. Install dependencies
-
-```sh
+### 2️⃣ Install Dependencies
+```bash
 npm install
-
 ```
 
-3. Add a pic of the receiver, in the `./local` directory. Ensure that the image is of a 1:1 ratio or it might get cropped and squished.
-
-4. Create a `.env` file in the root directory, and add the following lines.
-
-```env
- NAME='Name of the Receiever'
- PIC='name-of-image.extension'
-
+### 3️⃣ Configure Environment
+Copy the example environment file and fill in your details:
+```bash
+cp example.env .env
 ```
 
-5. Execute the following commands in order.
-
-```sh
- npm run init-index-local
- npm run build:parcel
-
-```
-
-6. Upon Successful execution, your built files will be ready in the `./dist` directory. Serve this directory using `live-server` or similar tools to see your card.
-
-For further customization, check out [here](./docs/customizations.md).
+> [!IMPORTANT]
+> Make sure to update the `.env` file with the recipient's name and your chosen photo!
 
 ---
 
-## References
+## ⚙️ Configuration (.env)
 
-- [Environment Variables](./docs/variables.md)
-- [Attributions](./docs/attributions.md)
+| Variable | Description | Example |
+| :--- | :--- | :--- |
+| `NAME` | **(Mandatory)** Recipient's name | `Jane` |
+| `PIC` | **(Mandatory)** Path to the main photo (in `src/assets/`) | `my-photo.jpg` |
+| `NICKNAME` | A cute nickname for personalization | `Sunshine` |
+| `HBD_MSG` | Short birthday greeting | `Have a blast!` |
+| `SCROLL_MSG` | Path to a `.txt` file with a long message | `message.txt` |
+| `OPEN_DATE` | Date when the card becomes active (YYYY-MM-DD) | `2024-12-25` |
 
 ---
 
-## Support
+## 🛠️ Development
 
-If you have any queries or need some help in deployment, you may contact me here
+To start the development server with live reloading:
+```bash
+npm run watch
+```
 
-- [Telegram](https://t.me/AnshumanMahato)
-- [Email](mailto:rcoder.bytes@gmail.com)
+> [!TIP]
+> This command will automatically initialize your local data and start the Parcel bundler.
 
-<div align="center">
-Made with 💖 by Anshuman Mahato
-</div>
+---
 
+## 📦 Build & Deploy
+
+### Local Build
+To create a production-ready build on your machine:
+```bash
+npm run build:local
+```
+
+### ☁️ Vercel Deployment
+This project is pre-configured for Vercel.
+
+1. **Push** your code to GitHub.
+2. **Import** the project into Vercel.
+3. **Environment Variables**: Add your `.env` variables in the Vercel project settings.
+4. **Deploy!** 🚀
+
+> [!NOTE]
+> The build command on Vercel is automatically detected as `npm run build:local` based on `vercel.json`.
+
+---
+
+## 📂 Project Structure
+
+- `src/`: Source code (HTML, CSS, JS).
+- `builder/`: Scripts to generate the final index file based on config.
+- `local/`: Local data storage for assets.
+- `dist/`: Generated production build files.
+
+---
+
+## 🤝 Contributing
+Feel free to fork this project and add more themes or animations!
+
+**Original Author**: [Anshuman Mahato](https://github.com/AnshumanMahato)
